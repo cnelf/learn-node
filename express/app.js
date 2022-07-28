@@ -1,8 +1,10 @@
-const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const express = require('express');
+const morgan = require('morgan');
 
 const app = express();
+app.use(morgan('dev'));
 app.use(express.json());
 
 const tours = JSON.parse(fs.readFileSync(path.join(__dirname, './data/tours.json')));
@@ -79,8 +81,45 @@ const deleteTourById = (req, res) => {
   });
 };
 
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This Route Is Not Yet Implemented'
+  });
+};
+
+const createUserById = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This Route Is Not Yet Implemented'
+  });
+};
+
+const getUserById = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This Route Is Not Yet Implemented'
+  });
+};
+
+const updateUserById = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This Route Is Not Yet Implemented'
+  });
+};
+
+const deleteUserById = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This Route Is Not Yet Implemented'
+  });
+};
+
 app.route('/api/v1/tours').get(getAllTours).post(createTourById);
 app.route('/api/v1/tours/:id').get(getTourById).patch(updateTourById).delete(deleteTourById);
+app.route('/api/v1/users').get(getAllUsers).post(createUserById);
+app.route('/api/v1/users/:id').get(getUserById).patch(updateUserById).delete(deleteUserById);
 
 const port = 3000;
 app.listen(port, () => {
