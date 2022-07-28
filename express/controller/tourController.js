@@ -14,6 +14,17 @@ exports.checkId = (req, res, next, val) => {
   next();
 };
 
+exports.checkCreateBody = (req, res, next) => {
+  const { name, price } = req.body;
+  if (!name || !price) {
+    return res.status(400).json({
+      status: 'fail',
+      message: 'Missing required parameter "name" and "price" in body'
+    });
+  }
+  next();
+};
+
 exports.getAllTours = (req, res) => {
   res.status(200).json({
     status: 'success',
@@ -38,7 +49,7 @@ exports.createTourById = (req, res) => {
 
   tours.push(newTour);
 
-  fs.writeFile(path.join(__dirname, './data/tours.json'), JSON.stringify(tours), (err) => {
+  fs.writeFile(path.join(__dirname, '../data/tours.json'), JSON.stringify(tours), (err) => {
     if (err) {
       return console.log(err);
     }
