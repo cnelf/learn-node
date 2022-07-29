@@ -45,7 +45,7 @@ exports.getTourById = (req, res) => {
 
 exports.createTourById = (req, res) => {
   const lastTour = tours[tours.length - 1];
-  const newTour = Object.assign({ id: lastTour.id + 1 }, req.body);
+  const newTour = { id: lastTour.id + 1, ...req.body };
 
   tours.push(newTour);
 
