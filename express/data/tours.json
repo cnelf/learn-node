@@ -47,5 +47,6 @@
   { "id": 3, "name": "new tour", "duration": 10, "difficulty": "easy" },
   { "id": 4, "name": "new tour", "duration": 10, "difficulty": "easy" },
   { "id": 5, "name": "new tour", "duration": 10, "difficulty": "easy" },
-  { "id": 6, "name": "new tour", "duration": 10, "difficulty": "easy", "price": 150 }
+  { "id": 6, "name": "new tour", "duration": 10, "difficulty": "easy", "price": 150 },
+  { "id": 7, "name": "new tour", "duration": 10, "difficulty": "easy", "price": 150 }
 ]
