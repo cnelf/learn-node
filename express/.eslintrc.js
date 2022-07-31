@@ -4,7 +4,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'off',
     'spaced-comment': 'off',
-    'no-console': 'warn',
+    'no-console': ['warn', { allow: ['warn', 'error'] }],
     'consistent-return': 'off',
     'func-names': 'off',
     'object-shorthand': 'off',
